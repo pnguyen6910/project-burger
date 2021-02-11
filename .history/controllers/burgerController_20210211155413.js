@@ -27,8 +27,6 @@ router.put("/api/burgers/:id", function(req, res) {
     console.log("condition", condition)
 
     burger.updateOne({
-
+        
     })
 })
-
-module.exports = router;
