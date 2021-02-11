@@ -29,18 +29,6 @@ var orm = {
             if (err) throw err
             cb(result)
         })
-    },
-    insertOne: function(tableName, cb) {
-        connection.query("", function(err, result) {
-            if (err) throw err
-            cb(result)
-        })
-    },
-    updateOne: function(tableName, cb) {
-        connection.query("", function(err, result) {
-            if (err) throw err
-            cb(result)
-        })
     }
 }
 
