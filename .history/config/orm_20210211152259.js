@@ -2,7 +2,7 @@
 // SELECT `burgers`.`burger_name`, `burgers`.`devoured` FROM `burgers_db`.`burgers`;
 
 //insertOne()
-// INSERT INTO `burgers_db`.`burgers` (`burger_name`) VALUES (<{burger_name: }>);
+INSERT INTO `burgers_db`.`burgers` (`burger_name`) VALUES (<{burger_name: }>);
 
 //updateOne()
 // UPDATE `burgers_db`.`burgers`
@@ -21,7 +21,7 @@ var orm = {
         })
     },
     insertOne: function(tableName, cb) {
-        connection.query('SELECT `burgers`.`burger_name`, `burgers`.`devoured` FROM `burgers_db`.`burgers`;', function(err, result) {
+        connection.query("", function(err, result) {
             if (err) throw err
             cb(result)
         })
