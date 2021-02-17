@@ -4,7 +4,7 @@ $(function() {
         const newDevoured = $(this).data("devoured")
 
         var newDevouredState = {
-            devour: newDevoured
+            devour = newDevoured
         }
 
         $.ajax("/api/burgers" + id, {
@@ -12,7 +12,7 @@ $(function() {
             data: newDevouredState
         }).then(
             function() {
-                console.log("changed devoured to", newDevoured)
+                console.log("changed sleep to", newDevoured)
                 location.reload
             }
         )
