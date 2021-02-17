@@ -16,33 +16,14 @@ var orm = {
             cb(result)
         })
     },
-    insertOne: function(table, cols, vals, cb) {
-        var queryString = "INSERT INTO" + table
-        queryString += " ("
-        queryString += cols.toString()
-        queryString += ") "
-        queryString += "VALUES ("
-        queryString += printQuestionMarks(vals.length)
-        queryString += ") "
-
-        console.log(queryString)
-
-        connection.query(queryString, vals, function(err, result) {
+    insertOne: function(tableName, cb) {
+        connection.query('INSERT INTO `burgers_db`.`burgers` (`burger_name`) VALUES (<{burger_name: }>);', function(err, result) {
             if (err) throw err
             cb(result)
         })
     },
-    updateOne: function(table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
-
-        queryString += " SET ";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
-        
-        console.log(queryString)
-
-        connection.query(queryString, function(err, result) {
+    updateOne: function(tableName, cb) {
+        connection.query('`burgers_db`.`burgers` SET `id` = <{id: }>, `burger_name` = <{burger_name: }>, `devoured` = <{devoured: 0}> WHERE `id` = <{expr}>;', function(err, result) {
             if (err) throw err
             cb(result)
         })
